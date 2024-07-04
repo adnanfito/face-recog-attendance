@@ -105,6 +105,9 @@ def TrackImages():
         cv2.imshow('Taking Attendance', im)
         if (cv2.waitKey(1) == ord('q')):
             break
+        if ((cv2.waitKey(1) == ord('q')) and (Id == 'Unknown')):
+            cv2.destroyAllWindows()
+            return False
         if (cv2.waitKey(1) == 27):
             cv2.destroyAllWindows()
             return False
